@@ -10,7 +10,7 @@ services:
   nginx:
     image: nginx
     volumes:
-      - ./django.conf:/etc/nginx/conf.d/django.conf:ro
+      - ./nginx/conf.d/:/etc/nginx/conf.d/:ro
     networks:
       phish-network:
     ports:
