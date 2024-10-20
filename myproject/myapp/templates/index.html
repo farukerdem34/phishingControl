@@ -41,11 +41,13 @@
         <tr>
             <th>İsim</th>
             <th>Soyisim</th>
+            <th>Sayaç</th>
         </tr>
         {% for name in names %}
         <tr>
             <td>{{ name.first_name }}</td>
             <td>{{ name.last_name }}</td>
+            <td>{{ name.count }}</td>
         </tr>
         {% endfor %}
     </table>

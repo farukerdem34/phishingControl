@@ -81,16 +81,30 @@ WSGI_APPLICATION = 'myproject.wsgi.application'
 #     }
 # }
 
+# DEVELOPMENT
 DATABASES = {
     'default': {
         'ENGINE': 'django.db.backends.mysql',
         'NAME': 'phishing',
         'USER': 'phisher',
         'PASSWORD': 'user_password',
-        'HOST': 'db',  # veya başka bir IP
-        'PORT': '3306',  # varsayılan MariaDB portu
+        'HOST': '127.0.0.1',  
+        'PORT': '3306',  
     }
 }
+
+
+# PROD
+# DATABASES = {
+#     'default': {
+#         'ENGINE': 'django.db.backends.mysql',
+#         'NAME': 'phishing',
+#         'USER': 'phisher',
+#         'PASSWORD': 'user_password',
+#         'HOST': 'db',  
+#         'PORT': '3306',  
+#     }
+# }
 
 
 # Password validation
