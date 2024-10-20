@@ -1,6 +1,6 @@
-from django.shortcuts import render
+from django.shortcuts import render,redirect
 from .models import Name
-
+from django.contrib.auth.decorators import login_required
 
     
 def index(request):
@@ -19,3 +19,14 @@ def index(request):
     names = Name.objects.all()
     return render(request, 'index.html', {'names': names})
 
+@login_required
+def delete_record(r):
+    if r.user.is_superuser:
+        first_name = str(r.GET['n']).lower()
+        last_name = str(r.GET['l']).lower()
+        target = Name.objects.filter(first_name=first_name,last_name=last_name)
+        target.delete()
+        
+        return redirect('index')
+    else:
+        return render(r,'login')

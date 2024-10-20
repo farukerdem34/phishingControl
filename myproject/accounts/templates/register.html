@@ -1,0 +1,7 @@
+<!-- templates/accounts/register.html -->
+<form method="POST">
+    {% csrf_token %}
+    <input type="text" name="username" placeholder="Kullanıcı Adı" required>
+    <input type="password" name="password" placeholder="Şifre" required>
+    <button type="submit">Kaydol</button>
+</form>
