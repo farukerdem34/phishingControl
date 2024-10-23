@@ -4,7 +4,7 @@ services:
     networks:
       phish-network:
     volumes:
-      - db:/app/db.sqlite3
+      - app:/app
     restart: on-failure
  
   nginx:
@@ -21,11 +21,9 @@ services:
 
 networks:
   phish-network:
-    ipam:
-      config:
-        - subnet: 10.0.0.0/24
+    
 
 volumes:
   data:
   nginx:
-  db:
+  app:
