@@ -17,19 +17,6 @@ services:
       phish-network:
     ports:
       - "80:80" 
-  
-  db:
-    image: mysql
-    environment:
-      MYSQL_ROOT_PASSWORD: my-secret-pw
-      MYSQL_DATABASE: phishing
-      MYSQL_USER: phisher
-      MYSQL_PASSWORD: user_password
-    volumes:
-      - data:/var/lib/mysql
-    networks:
-      phish-network:
-        ipv4_address: 10.0.0.50
 
 
 
